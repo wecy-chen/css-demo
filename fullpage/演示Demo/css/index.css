@@ -1,0 +1,560 @@
+.section {
+    position: relative;
+}
+
+.sectionA {
+    height: 100%;
+    background-color: #041527;
+}
+
+.sectionA>div {
+    overflow: hidden;
+}
+
+.sectionA>div>.bg {
+    width: 1200px;
+    height: 732px;
+    left: 50%;
+    margin-left: -600px;
+    background: url('../images/first_bg.png');
+    position: absolute;
+}
+
+.sectionA>div>[class^=word] {
+    position: absolute;
+}
+
+.sectionA>div>.word1 {
+    width: 718px;
+    height: 190px;
+    top: 110px;
+    left: 50%;
+    margin-left: -400px;
+    background: url('../images/first_word01.png');
+}
+
+.sectionA>div>.word2 {
+    width: 600px;
+    height: 128px;
+    left: 50%;
+    top: 300px;
+    margin-left: -200px;
+    background: url('../images/first_word02.png');
+}
+
+.sectionA>div>.word3 {
+    width: 810px;
+    height: 82px;
+    left: 50%;
+    top: 428px;
+    margin-left: -405px;
+    background: url('../images/first_word03.png');
+}
+
+.sectionA>div>.web {
+    width: 214px;
+    height: 214px;
+    position: absolute;
+    right: 100px;
+    top: 100px;
+}
+
+.sectionA>div>.web>.circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../images/first_web.png');
+    /* 添加动画效果 */
+    animation: sectionA-Rotate 2s linear infinite;
+}
+
+.sectionA>div>.web p {
+    /*line-height: 106px;*/
+    font-size: 45px;
+    font-weight: 900;
+    position: absolute;
+    left: 50%;
+    margin-left: -52px;
+    margin-top: 30px;
+}
+
+
+/* 默认一直旋转的动画 */
+
+@keyframes sectionA-Rotate {
+    from {}
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* 默认把这些元素全部移出去 */
+
+.sectionA>div>.bg {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.sectionA.now>div>.bg {
+    transition: all .5s;
+    transform: none;
+    opacity: 1;
+}
+
+.sectionA>div>.word1 {
+    transform: translateX(-300%);
+    transition: all .5s .2s;
+}
+
+.sectionA.now>div>.word1 {
+    transform: none;
+}
+
+.sectionA>div>.word2 {
+    transform: translateX(300%);
+    transition: all .5s .2s;
+}
+
+.sectionA.now>div>.word2 {
+    transform: none;
+}
+
+
+/* 区域2 */
+
+.sectionB {
+    height: 100%;
+    background-color: #041527;
+}
+
+.sectionB>div>.title-bg {
+    width: 860px;
+    height: 140px;
+    background: url('../images/hd_bg.png')no-repeat left bottom;
+    margin: 0 auto;
+}
+
+.sectionB>div>.title-bg>.title {
+    text-align: center;
+    font-size: 60px;
+    line-height: 100px;
+    margin: 0;
+    border-bottom: 4px solid white;
+    font-weight: bolder;
+    color: white;
+}
+
+.sectionB>div>.students {
+    margin-top: 50px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: space-around;
+}
+
+.sectionB>div>.students>li>div {
+    width: 269px;
+    height: 353px;
+    background: url('../images/box1_bg.jpg');
+}
+
+.sectionB>div>.students>li>div>h3 {
+    font-size: 26px;
+    color: skyblue;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.sectionB>div>.students>li>div>p {
+    color: white;
+    font-size: 20px;
+    padding-left: 30px;
+    margin-top: 5px;
+}
+
+.sectionB>div>.students>li>h4 {
+    font-size: 24px;
+    color: orange;
+    text-align: center;
+    margin: 0;
+}
+
+.sectionB>div>.students>li>p {
+    /*font-size:20px;*/
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+
+/* 动画效果 */
+
+.sectionB>div>.title-bg {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.sectionB.now>div>.title-bg {
+    transition: all .5s;
+    opacity: 1;
+    transform: none;
+}
+
+.sectionB.now>div>.students>li {
+    transform: none;
+    opacity: 1;
+    transition: all .5s .5s;
+}
+
+.sectionB>div>.students>li {
+    transform: translateY(200%);
+    opacity: 0;
+}
+
+.sectionB>div>.students>li:nth-child(2) {
+    transition-delay: .7s;
+}
+
+.sectionB>div>.students>li:nth-child(3) {
+    transition-delay: .9s;
+}
+
+.sectionB>div>.students>li:nth-child(4) {
+    transition-delay: 1.1s;
+}
+
+.sectionB>div>.students>li:hover>div {
+    background: url('../images/box1_bg.gif');
+}
+
+
+/* 第三页 */
+
+.sectionC {
+    height: 100%;
+    /*background-color: #041527;*/
+    background: url('../images/third_bg.jpg')no-repeat center/cover;
+}
+
+.sectionC>div>.title-bg {
+    height: 140px;
+    width: 860px;
+    margin: 0 auto;
+    background: url('../images/hd_bg.png')no-repeat bottom left;
+}
+
+.sectionC>div>.title-bg>h2 {
+    line-height: 100px;
+    margin: 0;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    border-bottom: 4px solid white;
+}
+
+.sectionC>div>.inner {
+    /*width: 874px;*/
+    height: 354px;
+    margin: 50px auto;
+    background: url('../images/thrid_inner.png')no-repeat center;
+    position: relative;
+}
+
+.sectionC>div>.inner>ul.selection {
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+.sectionC>div>.inner>ul.selection>li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.sectionC>div>.inner>ul.selection>li>a {
+    width: 220px;
+    height: 56px;
+    background: url('../images/list1.png')no-repeat center, #03EFFC;
+}
+
+.sectionC>div>.inner>ul.selection>li>a:hover {
+    background-color: yellow;
+}
+
+.sectionC>div>.inner>ul.selection>li>a.active {
+    background-color: yellow;
+}
+
+.sectionC>div>.inner>ul.lessons {
+    width: 555px;
+    height: 276px;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    margin-left: -277.5px;
+}
+
+.sectionC>div>.inner>ul.lessons>li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    /*background-color: hotpink;*/
+}
+
+.sectionC>div>.inner>ul.lessons>li:nth-child(1) {
+    background: url('../images/list_con1.png');
+}
+
+.sectionC>div>.inner>ul.lessons>li:nth-child(2) {
+    background: url('../images/list_con2.png');
+}
+
+.sectionC>div>.inner>ul.lessons>li:nth-child(3) {
+    background: url('../images/list_con3.png');
+}
+
+.sectionC>div>.inner>ul.lessons>li:nth-child(4) {
+    background: url('../images/list_con4.png');
+}
+
+.sectionC>div>.inner>ul.lessons>li:nth-child(5) {
+    background: url('../images/list_con5.png');
+}
+
+.sectionC>div>.inner>ul.lessons>li:nth-child(6) {
+    background: url('../images/list_con6.png');
+}
+
+.sectionC>div>.title-bg {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.sectionC.now>div>.title-bg {
+    transition: all .5s;
+    transform: none;
+    opacity: 1;
+}
+
+.sectionC>div>.inner {
+    opacity: 0;
+    transform: translateY(50%);
+}
+
+.sectionC.now>div>.inner {
+    transition: all .5s .5s;
+    opacity: 1;
+    transform: none;
+}
+
+
+/* 第四页 */
+
+.sectionD {
+    height: 100%;
+    background-color: #E4EBE9;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionD>div>.title-bg {
+    width: 860px;
+    margin: 0 auto;
+    height: 140px;
+    background: url('../images/hd_bg01.png')no-repeat bottom left;
+}
+
+.sectionD>div>.title-bg>h2 {
+    margin: 0;
+    font-size: 60px;
+    line-height: 100px;
+    color: #009199;
+    text-align: center;
+    border-bottom: 4px solid #05B5BF;
+}
+
+.sectionD>div>.fsbanner {
+    flex: 1;
+    position: relative;
+    width: 960px;
+    height: 600px;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: skyblue;
+    overflow: hidden;
+}
+
+.sectionD>div>.fsbanner>div {
+    position: absolute;
+    display: flex;
+    width: 760px;
+    height: 100%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-top: 40px;
+    overflow: hidden;
+    justify-content: space-around;
+}
+
+.sectionD>div>.fsbanner>div>.info {
+    padding: 20px;
+    box-sizing: border-box;
+    color: black;
+}
+
+.sectionD>div>.fsbanner>div>.info>h4 {
+    text-align: center;
+}
+
+.sectionD>div>.fsbanner>div:nth-child(1) {
+    background-color: orange;
+    left: 0px;
+}
+
+.sectionD>div>.fsbanner>div:nth-child(2) {
+    background-color: wheat;
+    left: 160px;
+}
+
+.sectionD>div>.fsbanner>div:nth-child(3) {
+    background-color: darkolivegreen;
+    flex-direction: column;
+    left: 320px;
+}
+
+.sectionD>div>.fsbanner>div:nth-child(3)>.info {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.sectionD>div>.fsbanner>div:nth-child(3)>.info>h4 {
+    margin: 0;
+}
+
+.sectionD>div>.fsbanner>div:nth-child(4) {
+    background-color: gainsboro;
+    left: 480px;
+}
+
+.sectionD>div>.fsbanner>div:nth-child(5) {
+    background-color: lightgreen;
+    left: 640px;
+}
+
+.sectionD>div>.fsbanner>div:nth-child(6) {
+    background-color: #05B5BF;
+    left: 800px;
+}
+
+.sectionD>div>.fsbanner>div:nth-child(7) {
+    background-color: hotpink;
+    left: 800px;
+}
+
+.sectionD>div>.fsbanner>div {
+    transition: all .5s;
+}
+
+.sectionD>div>.title-bg {
+    opacity: 0;
+    position: relative;
+    /*top: -100%;*/
+    transform: translateY(-100%);
+}
+
+.sectionD.now>div>.title-bg {
+    transition: all .5s;
+    transform: none;
+    /*top: 0;*/
+    opacity: 1;
+}
+
+
+/* 第五页 */
+
+.sectionE {
+    height: 100%;
+    background-color: #E4EBE9;
+    background: url('../images/fifth_bg.jpg')no-repeat center/cover;
+}
+
+.sectionE>div>.title-bg {
+    height: 140px;
+    width: 960px;
+    margin: 0 auto;
+    background: url('../images/hd_bg.png')no-repeat bottom left;
+}
+
+.sectionE>div>.title-bg>h2 {
+    color: white;
+    font-size: 60px;
+    line-height: 100px;
+    text-align: center;
+    margin: 0;
+    border-bottom: 4px solid white;
+}
+
+.sectionE>div>.info-box {
+    width: 1090px;
+    margin: 20px auto;
+}
+
+.sectionE>div>.info-box>.title {
+    height: 64px;
+    background: url('../images/fifth_tit.png')no-repeat center;
+}
+
+.sectionE>div>.info-box>.table {
+    height: 233.3333px;
+    background: url('../images/fifth_table.png')no-repeat;
+    animation: scroll 10s infinite;
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    20% {
+        background-position-y: -46.6px;
+    }
+    40% {
+        background-position-y: -93.2px;
+    }
+    60% {
+        background-position-y: -139.8px;
+    }
+    80% {
+        background-position-y: -186.4px;
+    }
+    100% {
+        background-position-y: -233.3px;
+    }
+}
+
+.sectionE>div>.title-bg {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all .5s;
+}
+
+.sectionE.now>div>.title-bg {
+    opacity: 1;
+    transform: none;
+}
+.sectionE.now>div>.info-box>.table {
+    animation-play-state: running;
+}

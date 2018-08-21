@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    body,h3{
+      margin: 0;
+    }
+    .section:nth-child(1) {
+      background-color: red;
+    }
+
+    .section:nth-child(2) {
+      background-color: orange;
+    }
+
+    .section:nth-child(3) {
+      background-color: yellowgreen;
+    }
+
+    .section:nth-child(4) {
+      background-color: greenyellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="fullpage">
+    <div class="section">
+      <h3>第一屏</h3>
+    </div>
+    <div class="section">
+      <h3>第二屏</h3>
+    </div>
+    <div class="section">
+      <h3>第三屏</h3>
+    </div>
+    <div class="section">
+      <h3>第四屏</h3>
+    </div>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullpage.js"></script>
+<script type="text/javascript">
+  $(function () {
+    // fullpage 是插件提供的方法 
+    $('#fullpage').fullpage();
+  });
+</script>

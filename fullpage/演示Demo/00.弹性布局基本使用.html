@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            height: 100px;
+            background-color: skyblue;
+        }
+
+        main {
+            width: 80%;
+            margin: 0 auto;
+            background-color: orange;
+            /*height: 200px;*/
+            flex: 1;
+            display: flex;
+        }
+
+        article {
+            height: 100%;
+            flex:1;
+            background-color: yellow;
+        }
+
+        aside {
+            flex:8;
+            height: 100%;
+            background-color: lightseagreen;
+        }
+
+        footer {
+            height: 100px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <article></article>
+        <aside></aside>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

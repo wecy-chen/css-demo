@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动画animation</title>
+  <style>
+    div{
+      width:500px;
+      height:100px;
+      background-color: red;
+      /* 参数
+         1.动画的名称
+         2.动画的执行的时间
+         3.动画延迟执行的时间
+         4.动画的运动速度曲线
+         5.动画执行的次数 无数次(infinite)
+         6.动画执行方向 反向(alternate) normal默认
+         7.动画的状态 running运动 paused暂停
+         8.动画执行结束之后保存什么状态 初始值or结束值 backwards,forwards 与5,6冲突
+      */
+      animation: move 2s 2s linear /*infinite alternate*/ running backwards
+    }
+    @keyframes move{
+      /*from{
+        width:500px;
+      }
+      to{
+        width: 800px;
+      }*/
+      0%{width: 500px;}
+      50%{width: 600px;}
+      100%{width: 800px;}
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

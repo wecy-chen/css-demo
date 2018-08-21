@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .sectionD {
+      height: 100%;
+      background-color: #E4EBE9;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sectionD>.title-bg {
+      width: 860px;
+      margin: 0 auto;
+      height: 140px;
+      background: url('images/hd_bg01.png')no-repeat bottom left;
+    }
+
+    .sectionD>.title-bg>h2 {
+      margin: 0;
+      font-size: 60px;
+      line-height: 100px;
+      color: #009199;
+      text-align: center;
+      border-bottom: 4px solid #05B5BF;
+    }
+
+    .sectionD>.fsbanner {
+      flex: 1;
+      position: relative;
+      width: 960px;
+      height: 600px;
+      color: #fff;
+      margin: 0 auto;
+      margin-top: 20px;
+      border-radius: 20px;
+      background-color: skyblue;
+      overflow: hidden;
+    }
+
+    .sectionD>.fsbanner>div {
+      position: absolute;
+      display: flex;
+      width: 760px;
+      height: 100%;
+      border-radius: 20px;
+      box-sizing: border-box;
+      padding-left: 40px;
+      padding-top: 40px;
+      overflow: hidden;
+      justify-content: space-around;
+    }
+
+    .sectionD>.fsbanner>div>.info {
+      padding: 20px;
+      box-sizing: border-box;
+      color: black;
+    }
+
+    .sectionD>.fsbanner>div>.info>h4 {
+      text-align: center;
+    }
+
+
+
+    .sectionD>.fsbanner>div:nth-child(1) {
+      background-color: orange;
+      left: 0px;
+    }
+
+    .sectionD>.fsbanner>div:nth-child(2) {
+      background-color: wheat;
+      left: 160px;
+    }
+
+    .sectionD>.fsbanner>div:nth-child(3) {
+      background-color: darkolivegreen;
+      flex-direction: column;
+      left: 320px;
+    }
+
+    .sectionD>.fsbanner>div:nth-child(3)>.info {
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+    .sectionD>.fsbanner>div:nth-child(3)>.info>h4 {
+      margin: 0;
+    }
+
+
+    .sectionD>.fsbanner>div:nth-child(4) {
+      background-color: gainsboro;
+      left: 480px;
+    }
+
+    .sectionD>.fsbanner>div:nth-child(5) {
+      background-color: lightgreen;
+      left: 640px;
+    }
+
+    .sectionD>.fsbanner>div:nth-child(6) {
+      background-color: #05B5BF;
+      left: 800px;
+    }
+
+    .sectionD>.fsbanner>div:nth-child(7) {
+      background-color: hotpink;
+      left: 800px;
+    }
+
+    .sectionD>.fsbanner>div {
+      transition: all .5s;
+    }
+
+    .sectionD>.title-bg {
+      opacity: 0;
+      transition: all .5s;
+      position: relative;
+      top: -100%;
+      /*transform: translateY(-100%);*/
+    }
+
+    .sectionD:hover>.title-bg {
+      transform: none;
+      top: 0;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sectionD">
+    <div class="title-bg">
+      <h2>实战项目接轨最热技术前沿!</h2>
+    </div>
+    <div class="fsbanner">
+      <div>
+        <img src="images/cz1.gif" alt="">
+        <div class="info">
+          <h4>1.综合项目</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor, illo distinctio adipisci omnis molestias
+            minus, nam in quis deleniti. Quis eos placeat error repellendus voluptas quo laboriosam, aperiam dolores!</p>
+        </div>
+      </div>
+      <div>
+        <img src="images/cz2.gif" alt="">
+        <div class="info">
+          <h4>2.综合项目</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor, illo distinctio adipisci omnis molestias
+            minus, nam in quis deleniti. Quis eos placeat error repellendus voluptas quo laboriosam, aperiam dolores!</p>
+        </div>
+      </div>
+      <div>
+        <img src="images/cz3.gif" alt="">
+        <div class="info">
+          <h4>3.综合项目</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor, illo distinctio adipisci omnis molestias
+            minus, nam in quis deleniti. Quis eos placeat error repellendus voluptas quo laboriosam, aperiam dolores!</p>
+        </div>
+      </div>
+      <div>
+        <img src="images/cz4.gif" alt="">
+        <div class="info">
+          <h4>4.综合项目</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor, illo distinctio adipisci omnis molestias
+            minus, nam in quis deleniti. Quis eos placeat error repellendus voluptas quo laboriosam, aperiam dolores!</p>
+        </div>
+      </div>
+      <div>
+        <img src="images/cz5.gif" alt="">
+        <div class="info">
+          <h4>5.综合项目</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor, illo distinctio adipisci omnis molestias
+            minus, nam in quis deleniti. Quis eos placeat error repellendus voluptas quo laboriosam, aperiam dolores!</p>
+        </div>
+      </div>
+      <div>
+        <img src="images/cz6.gif" alt="">
+        <div class="info">
+          <h4>6.综合项目</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor, illo distinctio adipisci omnis molestias
+            minus, nam in quis deleniti. Quis eos placeat error repellendus voluptas quo laboriosam, aperiam dolores!</p>
+        </div>
+      </div>
+      <div>
+        <img src="images/cz7.gif" alt="">
+        <div class="info">
+          <h4>7.综合项目</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor, illo distinctio adipisci omnis molestias
+            minus, nam in quis deleniti. Quis eos placeat error repellendus voluptas quo laboriosam, aperiam dolores!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    // 总宽度
+    var fsWidth = 960,
+      itemWidth = 760,
+      col = 7,
+      space = (fsWidth - itemWidth) / (col - 1),
+      initSpace = fsWidth / col;
+    $('.fsbanner>div').each(function (index, ele) {
+      $(ele).css({
+        left: initSpace * index
+      })
+    })
+    $('.fsbanner>div').mouseover(function () {
+      var index = $(this).index();
+      console.log('this:--' + index);
+      $('.fsbanner>div').each(function (currentIndex, element) {
+        console.log(currentIndex);
+        if (currentIndex <= index) {
+          $(element).css({
+            left: currentIndex * space
+          })
+        } else(
+          $(element).css({
+            left: (currentIndex - 1) * space + itemWidth
+          })
+        )
+      })
+    }).mouseout(function () {
+      $('.fsbanner>div').each(function (index, element) {
+        $(element).css({
+          left: index * initSpace
+        })
+      })
+    })
+  })
+</script>

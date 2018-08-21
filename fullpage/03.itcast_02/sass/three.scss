@@ -1,0 +1,50 @@
+html,body{
+  height: 100%;
+}
+body{
+  margin: 0;
+  background: url('../images/fifth_bg.jpg')no-repeat center / cover;
+  .title{
+    width: 860px;
+    height: 140px;
+    background: url('../images/hd_bg.png')no-repeat bottom left;
+    margin: 0 auto;
+    h2{
+      font-size:60px;
+      color:white;
+      margin: 0;
+      padding-top: 20px;
+      border-bottom: 4px solid white;
+      text-align: center;
+    }
+  }
+  .inner{
+    width: 1000px;
+    height: 354px;
+    margin: 0 auto;
+    background: url('../images/thrid_inner.png')no-repeat center;
+    .links{
+      list-style: none;
+      padding: 0;
+      padding-top: 15px;
+      li{
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+        padding: 5px 0;
+        a{
+          width: 200px;
+          height: 60px;
+          background: url('../images/list1.png')no-repeat center,yellowgreen;
+        }
+      }
+    }
+  }
+}
+
+input::placeholder{
+  color:orange;
+  transform: rotate(130deg);
+}
+
+

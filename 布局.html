@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #div1 {
+        width: 400px;
+        height: 400px;
+        border: 1px solid red
+    }
+
+    #inner {
+        text-align: center;
+    }
+
+    img {
+        clear: both;
+        margin: auto;
+        display: block;
+    }
+
+    #inner-float1 {
+        /* 内部 */
+        position: relative;
+        margin-left: -50px;
+        left: 50%;
+        width: 100px;
+        float: left;
+        background-color: red
+    }
+
+    #outer {
+        position: relative;
+        border: 1px solid red;
+    }
+
+    #inner-absolute {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        /* translateX是相对自身来计算的。 */
+    }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div id='inner'>水平居中的元素</div>
+        <img src="1.jpg" alt="">
+        <!--  水平居中 -->
+        <div id="inner-float1">我是内部浮动</div>
+    </div>
+    <div id="outer">
+        <span id="inner-absolute">我是要居中的浮动元素</span>
+    </div>
+</body>
+
+</html>

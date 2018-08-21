@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>变换</title>
+  <style>
+    div{
+      width: 500px;
+      height: 500px;
+      border: 5px solid red;
+      margin:50px auto;
+    }
+    img{
+      width: 100%;
+      height:100%;
+      transition:transform 1s;
+
+      /*旋转基点*/
+     /* /-webkit-transform-origin: left top;
+      -moz-transform-origin: left top;
+      -ms-transform-origin: left top;
+      -o-transform-origin: left top;
+      transform-origin: left top;*/
+    }
+    div:hover img{
+        /*变化
+          rotate 旋转 deg角度(正负)  turn圈(正负) rad弧度 grad梯度
+          
+          transform-origin 变化基点 需要注意放在元素本身的样式里 不要hover
+
+          scale 缩放  单位是倍数
+
+          translate 位移X,Y,Z  translate(x,y)
+
+          skew //倾斜
+        */
+      -webkit-transform: rotate(1turn) scale(0.2);
+      -ms-transform: rotate(1turn);
+      -o-transform: rotate(1turn);
+      transform: rotate(1turn) scale(0.2) translate(100px,100px);
+    
+    }
+  </style>
+</head>
+<body>
+  <div><img src="http://up.qqjia.com/z/face01/face06/facejunyong/junyong02.jpg" alt=""></div>
+</body>
+</html>

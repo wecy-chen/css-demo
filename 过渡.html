@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>过渡</title>
+  <style>
+    *{margin:0;padding:0;}
+    body{font:12px '微软雅黑';}
+    ul{list-style:none;}
+    a{text-decoration:none;color: #000}
+    .clearfix:after{content:'';display:block;clear: both;}
+    /*
+      过渡: 允许css属性在一段时间内平滑的过渡;
+      display 不支持过渡
+    
+    优点:简单易用;
+    缺点:
+      1.需要事件触发
+      2.一次性的 每次都要触发
+      3. 只有开始和结束两种状态
+      4.一条属性只能定义过渡一次
+      
+    */
+    div{
+      width:300px;
+      height:100px;
+      background: red;
+      /*过渡的时间transition-property
+        过渡属性花费的时间transition-duration
+        过渡效果延迟的时间transition-delay:多久之后开始执行过渡;
+        过渡效果速度曲线transition-timing-function
+      */
+      transition:all 1s 0.2s cubic-bezier(.29,1.21,.63,.11);
+    }
+    div:hover{
+      width:800px;
+      height: 200px;
+      background-color: blue
+    }
+  </style>
+</head>
+<body>
+  <div></div>  
+</body>
+</html>

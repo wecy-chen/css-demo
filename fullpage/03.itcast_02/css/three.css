@@ -1,0 +1,74 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: url("../images/fifth_bg.jpg") no-repeat center/cover;
+}
+body .title {
+  width: 860px;
+  height: 140px;
+  background: url("../images/hd_bg.png") no-repeat bottom left;
+  margin: 0 auto;
+}
+body .title h2 {
+  font-size: 60px;
+  color: white;
+  margin: 0;
+  padding-top: 20px;
+  border-bottom: 4px solid white;
+  text-align: center;
+}
+body .inner {
+  width: 1000px;
+  height: 354px;
+  margin: 0 auto;
+  background: url("../images/thrid_inner.png") no-repeat center;
+}
+body .inner .links {
+  list-style: none;
+  padding: 0;
+  padding-top: 15px;
+}
+body .inner .links li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 30px 0;
+  padding: 5px 0;
+}
+body .inner .links li a {
+  width: 200px;
+  height: 60px;
+  background: url("../images/list1.png") no-repeat center, yellowgreen;
+}
+
+input::-webkit-input-placeholder {
+  color: orange;
+  -webkit-transform: rotate(130deg);
+          transform: rotate(130deg);
+}
+
+input::-moz-placeholder {
+  color: orange;
+  transform: rotate(130deg);
+}
+
+input:-ms-input-placeholder {
+  color: orange;
+  -ms-transform: rotate(130deg);
+      transform: rotate(130deg);
+}
+
+input::placeholder {
+  color: orange;
+  -webkit-transform: rotate(130deg);
+      -ms-transform: rotate(130deg);
+          transform: rotate(130deg);
+}

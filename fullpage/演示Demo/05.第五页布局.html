@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .sectionE {
+            height: 100%;
+            background-color: #E4EBE9;
+            background: url('images/fifth_bg.jpg')no-repeat center/cover;
+        }
+
+        .sectionE>.title-bg {
+            height: 140px;
+            width: 960px;
+            margin: 0 auto;
+            background: url('images/hd_bg.png')no-repeat bottom left;
+        }
+
+        .sectionE>.title-bg>h2 {
+            color: white;
+            font-size: 60px;
+            line-height: 100px;
+            text-align: center;
+            margin: 0;
+            border-bottom: 4px solid white;
+        }
+
+        .sectionE>.info-box {
+            width: 1090px;
+            margin: 20px auto;
+        }
+
+        .sectionE>.info-box>.title {
+            height: 64px;
+            background: url('images/fifth_tit.png')no-repeat center;
+        }
+
+        .sectionE>.info-box>.table {
+            height: 233.3333px;
+            background: url('images/fifth_table.png')no-repeat;
+            animation: scroll 10s infinite;
+        }
+
+        @keyframes scroll {
+            20% {
+                background-position-y: -46.6px;
+            }
+            40% {
+                background-position-y: -93.2px;
+            }
+            60% {
+                background-position-y: -139.8px;
+            }
+            80% {
+                background-position-y: -186.4px;
+            }
+            100% {
+                background-position-y: -233.3px;
+            }
+        }
+
+        .sectionE>.title-bg {
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: all .5s;
+        }
+
+        .sectionE:hover>.title-bg {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sectionE">
+        <div class="title-bg">
+            <h2>他们比你就多了一步选择而已！</h2>
+        </div>
+        <div class="info-box">
+            <div class="title"></div>
+            <div class="table"></div>
+        </div>
+    </div>
+</body>
+
+</html>

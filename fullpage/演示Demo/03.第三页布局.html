@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .sectionC {
+      height: 100%;
+      /*background-color: #041527;*/
+      background: url('images/third_bg.jpg')no-repeat center/cover;
+    }
+
+    .sectionC>.title-bg {
+      height: 140px;
+      width: 860px;
+      margin: 0 auto;
+      background: url('images/hd_bg.png')no-repeat bottom left;
+    }
+
+    .sectionC>.title-bg>h2 {
+      line-height: 100px;
+      margin: 0;
+      font-size: 60px;
+      color: white;
+      text-align: center;
+      font-weight: 900;
+      border-bottom: 4px solid white;
+    }
+
+    .sectionC>.inner {
+      /*width: 874px;*/
+      height: 354px;
+      margin: 50px auto;
+      background: url('images/thrid_inner.png')no-repeat center;
+      position: relative;
+    }
+
+    .sectionC>.inner>ul.selection {
+      list-style: none;
+      padding: 0;
+      height: 100%;
+      padding: 50px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      box-sizing: border-box;
+    }
+
+    .sectionC>.inner>ul.selection>li {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px;
+    }
+
+    .sectionC>.inner>ul.selection>li>a {
+      width: 220px;
+      height: 56px;
+      background: url('images/list1.png')no-repeat center, #03EFFC;
+    }
+
+    .sectionC>.inner>ul.selection>li>a:hover {
+      background-color: yellow;
+    }
+
+    .sectionC>.inner>ul.selection>li>a.active {
+      background-color: yellow;
+    }
+
+
+    .sectionC>.inner>ul.lessons {
+      width: 555px;
+      height: 276px;
+      list-style: none;
+      padding: 0;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      margin-left: -277.5px;
+    }
+
+    .sectionC>.inner>ul.lessons>li {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: none;
+      /*background-color: hotpink;*/
+    }
+
+    .sectionC>.inner>ul.lessons>li:nth-child(1) {
+      background: url('images/list_con1.png');
+    }
+
+    .sectionC>.inner>ul.lessons>li:nth-child(2) {
+      background: url('images/list_con2.png');
+    }
+
+    .sectionC>.inner>ul.lessons>li:nth-child(3) {
+      background: url('images/list_con3.png');
+    }
+
+    .sectionC>.inner>ul.lessons>li:nth-child(4) {
+      background: url('images/list_con4.png');
+    }
+
+    .sectionC>.inner>ul.lessons>li:nth-child(5) {
+      background: url('images/list_con5.png');
+    }
+
+    .sectionC>.inner>ul.lessons>li:nth-child(6) {
+      background: url('images/list_con6.png');
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sectionC">
+    <div class="title-bg">
+      <h2>专为你打造精品课程服务!</h2>
+    </div>
+    <div class="inner">
+      <ul class='selection'>
+        <li>
+          <a data-index='0' href="javascript:void(0)"></a>
+          <a data-index='1' href="javascript:void(0)"></a>
+        </li>
+        <li>
+          <a data-index='2' href="javascript:void(0)"></a>
+          <a data-index='3' href="javascript:void(0)"></a>
+        </li>
+        <li>
+          <a data-index='4' href="javascript:void(0)"></a>
+          <a data-index='5' href="javascript:void(0)"></a>
+        </li>
+
+      </ul>
+      <ul class='lessons'>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script type="text/javascript" src='js/jquery.min.js'></script>
+<script type="text/javascript">
+  $(function () {
+    $('.selection>li>a').mouseenter(function () {
+      console.log($(this).attr('data-index'));
+      $('.selection>li>a').removeClass('active');
+      $(this).addClass('active');
+      $('.lessons>li').eq($(this).attr('data-index')).fadeIn().siblings().hide();
+    })
+    $('.selection>li>a').eq(0).mouseenter();
+  })
+</script>
