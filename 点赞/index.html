@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>点赞</title>
+    <style>
+    .web_heart {
+        height: 100px;
+        width: 100px;
+        background: url('image/web_heart.png');
+    }
+    .web_heart:hover{
+			-webkit-animation: test 1000ms steps(28) infinite;
+        animation: test 1000ms steps(28) infinite;
+    }
+
+    @-webkit-keyframes test {
+        0% {
+            background-position: left;
+        }
+        100% {
+            background-position: right;
+        }
+    }
+
+    @keyframes test {
+        0% {
+            background-position: left;
+        }
+        100% {
+            background-position: right;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="web_heart">
+    </div>
+</body>
+
+</html>

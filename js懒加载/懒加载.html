@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lazy loading</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style>
+    .container {
+        width: 100%;
+    }
+
+    .img-area {
+        height: 600px;
+        text-align: center
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="img-area">
+            <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img1.png">
+        </div>
+        <div class="img-area">
+            <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img2.png">
+        </div>
+        <div class="img-area">
+            <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img3.png">
+        </div>
+        <div class="img-area">
+            <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img4.png">
+        </div>
+        <div class="img-area">
+            <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img5.png" >
+        </div>
+    </div>
+</body>
+<script>
+
+    window.onload=checkImgs;
+    window.onscroll = throttle(checkImgs);
+
+function isInSight(el) {
+    const bound = el.getBoundingClientRect();
+    const clientHeight = window.innerHeight;
+    //如果只考虑向下滚动加载
+    //const clientWidth=window.innerWeight;
+    return bound.top <= clientHeight + 100;
+}
+
+let index = 0;
+
+function checkImgs() {
+    const imgs = document.querySelectorAll('.my-photo');
+    for (let i = index; i < imgs.length; i++) {
+        if (isInSight(imgs[i])) {
+            loadImg(imgs[i]);
+            index = i;
+        }
+    }
+    // Array.from(imgs).forEach(el => {
+    //   if (isInSight(el)) {
+    //     loadImg(el);
+    //   }
+    // })
+}
+
+function loadImg(el) {
+    if (!el.src) {
+        const source = el.dataset.src;
+        el.src = source;
+    }
+}
+//滚动函数节流、函数去抖
+function throttle(fn, mustRun = 500) {
+    //const timer = null;
+    let previous = null;
+    return function() {
+        const now = new Date();
+        const context = this;
+        const args = arguments;
+        if (!previous) {
+            previous = now;
+        }
+        const remaining = now - previous;
+        if (mustRun && remaining >= mustRun) {
+            fn.apply(context, args);
+            //fn()
+            previous = now;
+        }
+    }
+}
+
+</script>
+
+</html>

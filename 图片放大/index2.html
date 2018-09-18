@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+.box{
+	width: 500px;
+	position: relative;
+	margin: 0 auto;
+}
+img {
+    width: 500px;
+}
+.cover{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 50px;
+	height: 50px;
+	background-color: rgba(0,0,0,0.3);
+	border: 1px solid red;
+}
+.show{
+	position: absolute;
+	left:501px;
+	top:0;
+	width: 300px;
+	height: 300px;
+	background-image: url("images/1.jpg");
+ 	background-repeat: no-repeat;
+	background-size: 640%
+</style>
+
+<body>
+    <div class="box">
+        <img src="images/1.jpg" alt="">
+        <div class="cover"></div>
+        <div class="show"></div>
+    </div>
+</body>
+<script>
+	window.onload=function(){
+		let pic=document.querySelector('.box');
+		let h=pic.getElementsByTagName('img')[0].offsetHeight//图片高度
+		let cover=document.querySelector(".cover")
+
+		//展示
+		let show=document.querySelector('.show');
+
+		window.onmousemove=(e)=>{
+			let x=parseInt(e.clientX-pic.getBoundingClientRect().left);
+			let y=parseInt(e.clientY-pic.getBoundingClientRect().top);
+
+			if(x>0&&x<500&&y>0&&y<h){
+				if(x<25) x=25
+				if(y<25) y=25
+				if(x>474) x=474
+				if(y>h-26) y=h-26
+				cover.style.left=x-25+"px";
+				cover.style.top=y-25+"px";
+				show.style.backgroundPosition=(x-25)/450*100+"% "+(y-25)/(h-50)*100+"%";
+			}
+			
+			
+			
+		}
+	}
+</script>
+</html>

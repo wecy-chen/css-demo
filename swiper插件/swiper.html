@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="swiper.js"></script>
+	<style>
+		body,ul{
+			margin:0;
+		}
+		ul{
+			padding-left: 0
+		}
+		li{
+			list-style: none;
+		}
+		img{
+			display: block;
+		}
+		.content{
+			display: flex;
+			align-items: center;
+			position: relative;
+			width: 100vw;/*相对于手机屏幕的100%*/
+			height:100vh;
+			/*background: red;*/
+			overflow: hidden;
+		}
+		.swiper{
+			width: 100vw;
+			height: 60vh;
+			/*background-color: blue;*/
+		}
+		.swiper ul{
+			/*width:500vw;*/ /*ul的宽度*li的个数*/
+			height:60vh;
+			/*background-color: yellow;*/
+			transform: translateZ(0px);/*放在底下*/
+		}
+		.swiper ul li {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			float: left;
+			width: 100vw;
+			height: 60vh;
+			/*background-color: #b14775*/
+			border-radius: 20px;
+		}
+		.swiper ul li img{
+			width: 80%;
+			/*height: 80%;*/
+			border-radius: 20px;
+		}
+		.bg{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%
+		}
+		.bg img{
+			width: 100%;
+			height: 100%;
+			-webkit-filter: blur(30px); /* Chrome, Opera */
+       -moz-filter: blur(30px);
+        -ms-filter: blur(30px);    
+            filter: blur(30px);    
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="content">
+		<div class="swiper">
+			<div class="bg"><img src="http://img2.duitang.com/uploads/item/201204/07/20120407145843_RiWTB.png" alt=""></div>
+			<ul>
+				<li><img src="http://img2.duitang.com/uploads/item/201204/07/20120407145843_RiWTB.png" alt=""></li>
+				<li><img src="http://cdn.duitang.com/uploads/item/201408/14/20140814115229_aETfQ.thumb.700_0.png" alt=""></li>
+				<li><img src="http://img.zcool.cn/community/0145bb5791ade90000012e7e50ed34.png" alt=""></li>
+				<li><img src="http://pic1.win4000.com/mobile/2017-10-18/59e73a6752d0e.jpg" alt=""></li>
+				<li><img src="http://pic1.win4000.com/mobile/2017-10-10/59dc580685948.png" alt=""></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

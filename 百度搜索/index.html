@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+  	*{margin: 0;padding: 0}
+  	ul{list-style: none;}
+		img,input{display: block;margin: auto;}
+		img{margin-top: 150px}
+		input{width: 540px;height: 30px;}
+		#menu{
+			/*display: none;*/
+			width: 540px;
+			margin:auto;
+			border: 1px solid #000;
+			border-top: 0;
+		}
+		#menu ul li{
+			line-height: 30px
+		}
+		#menu ul li:hover{
+			background-color: #d1d1d1;
+		}
+  </style>
+ </head>
+ <body>
+  <img src='bd.png' width="210"/>
+  <input type="text" id="text">
+  <div id="menu">
+  	<ul>
+  	<!-- 	<li>1</li>
+  		<li>1</li>
+  		<li>1</li> -->
+  	</ul>
+  </div>
+  <script type="text/javascript">
+  //https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=1&cb=callback
+  	//获取文本框内容
+  	var text=document.getElementById('text');
+  	var oUl=document.querySelector('#menu ul')
+
+  	document.onkeyup=function(){
+  		//键盘松开事件
+  		var val=text.value;
+  		var script=document.createElement("script");
+  		script.src=`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${val}&cb=callback`;
+  		document.body.appendChild(script);
+  	}
+
+  	function callback(data){
+  		//console.log(data.s)
+  		oUl.innerHTML=""//清空原始
+  		data.s.map(function(value){
+  			var oLi=document.createElement("li")
+  			oLi.innerText=value;
+
+  			//跳转
+  			oLi.onclick=function(){
+  				window.location.href=`http://www.baidu.com/s?wd=${value}`
+  			}
+
+  			oUl.appendChild(oLi);
+  		})
+  	}
+  </script>
+  <!-- <script type="text/javascript" src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=1&cb=callback"></script> -->
+ </body>
+</html>

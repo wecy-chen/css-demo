@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script> -->
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #showBox {
+        position: relative;
+        width: 500px;
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+    }
+
+    #showBox img {
+        width: 500px;
+    }
+
+    # #pImg {
+        width: 500px;
+    }
+
+    #showImg {
+        position: absolute;
+        background-image: url('images/1.jpg');
+        background-attachment: flex;
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+    }
+
+    #moveImg {
+        position: absolute;
+        border: 1px solid #ccc;
+        /*background-color: rgba(0,0,255,0.3)*/
+    }
+    </style>
+</head>
+
+<body>
+    <div id="showBox">
+        <div class="img">
+        <img src="images/1.jpg" alt="">
+        <span id="moveImg"></span>  <!--小图预览-->
+        </div>
+    </div>
+    内容2333333333333333
+    <script>
+    $(function() {
+
+
+        $('#showBox .img').mouseover(function() {
+            var that = this;
+            var imgLeft = $(this).offset().left;
+            var imgTop = $(this).offset().top;
+            var imgWidth = $(this).width();
+            var imgHeight= $(this).height();
+            var sW;
+            var scale;
+            var sH;
+
+            $('<img>').prop('src', $(this).find('img').prop('src')).on('load', function() { //异步 取原始照片大小
+                $('<div id="showImg"></div>').insertAfter($('#showBox'))
+                // $('<span id="moveImg"></span>').appendTo($('.img'))
+                $('#moveImg').show()
+                $('#showImg').css({
+                    width: 300,
+                    height: 300,
+                    left: imgLeft + imgWidth + 10,
+                    top: imgTop - 4
+                })
+                scale = this.width / imgWidth;
+                sW =  parseInt($('#showImg').width() / scale);
+                sH = parseInt($('#showImg').height() / scale);
+
+
+               //console.log(sH)
+                 
+                $('#moveImg').css({
+                    width: sW,
+                    height: sH,
+                })
+
+
+
+            })
+
+
+            $(that).mousemove(function(e) {
+                var sL = e.clientX - imgLeft-sW/2;
+                var sT = e.clientY - imgTop-sH/2;
+
+                if (sL <= 6) {
+                    sL = 6
+                } else if (sL >= imgWidth - sW) {
+                    sL = imgWidth - sW
+                }
+
+                if (sT <= 6) {
+                    sT = 6
+                } else if (sT >= imgHeight - sH) {
+                    sT = imgHeight-sH
+                }
+                
+                $('#moveImg').css({
+                    left: sL,
+                    top: sT
+                })
+
+
+							//大图预览
+							var bL=Math.floor((e.clientX-imgLeft)*scale-150);
+							var bT=Math.floor((e.clientY-imgTop)*scale-150);
+							//console.log(-bL+'px '+(-bT+'px'))
+
+							$('#showImg').css('background-position',-bL+'px '+(-bT+'px'))
+
+            })
+
+
+
+        }).mouseout(function() {
+            $('#showImg').remove()
+            $('#moveImg').hide()
+            $('#showBox .img').off('mousemove');
+
+        })
+    })
+    </script>
+</body>
+
+</html>

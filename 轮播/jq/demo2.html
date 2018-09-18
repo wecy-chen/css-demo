@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo2</title>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<style>
+		.carousel{
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.carousel>ul{
+			margin: 0;
+			padding: 0;
+			position: relative;
+			list-style-type: none;
+			font-size: 0;
+		}
+		.carousel ul li {
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="carousel">
+		<ul>
+		<li><img src="img/1.jpg" alt="1"></li>
+		<li><img src="img/2.jpg" alt="2"></li>
+		<li><img src="img/3.jpg" alt="3"></li>
+		<li><img src="img/4.jpg" alt="4"></li>
+		<li><img src="img/5.jpg" alt="5"></li>
+		<li><img src="img/6.jpg" alt="6"></li>
+		</ul>
+	</div>
+	<script>
+		$(function(){
+			var $lis=$('.carousel ul li')
+			var w=$lis.eq(0).width();
+			var h=$lis.eq(0).height();
+			var l=$lis.length
+			var arr=[];//记录li的位置
+			
+			//设置总长度
+			$('.carousel>ul').width(w*l)
+			$('.carousel>ul').height(h)
+
+			//设置显示的宽高
+			$('.carousel').height(h)
+			$('.carousel').width(w)
+
+			//设置最后一张左边 (最后,1,2,3 ...)
+			$lis.eq(l-1).css('left',-w)
+			arr[l-1]={left:-w}
+			for(var i=0;i<l-1;i++){
+				$lis.eq(i).css('left',i*w)
+				arr[i]={left:i*w}
+			}
+			function moveRight(){
+				arr.unshift(arr.pop())
+				for(var i=0;i<l;i++){
+					$lis.eq(l-1-i).animate({left:arr[l-1-i].left},1000)
+				}
+			}
+			//moveRight()
+
+			setInterval(moveRight,2000);
+		})
+	</script>
+
+</body>
+</html>

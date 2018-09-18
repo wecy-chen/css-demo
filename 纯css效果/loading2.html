@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>loading加载</title>
+    <style>
+    .loading {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        margin: 100px auto;
+        /*background-color: red*/
+    }
+
+    .loading span {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: lightblue;
+        position: absolute;
+        animation: load 1.8s ease infinite;
+        transform: scale(0.3);
+    }
+
+    .loading span:nth-child(1) {
+        left: 50%;
+        top: 0;
+        margin-left: -8px;
+        -webkit-animation-delay: 0.2s;
+        /*动画延迟*/
+        -o-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+    }
+
+    .loading span:nth-child(2) {
+        right: 12px;
+        top: 12px;
+        -webkit-animation-delay: 0.4s;
+        -o-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+    }
+
+    .loading span:nth-child(3) {
+        right: 0;
+        top: 50%;
+        margin-top: -8px;
+        -webkit-animation-delay: 0.8s;
+        -o-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+    }
+
+    .loading span:nth-child(4) {
+        bottom: 12px;
+        right: 12px;
+        -webkit-animation-delay: 1.0s;
+        -o-animation-delay: 1.0s;
+        animation-delay: 1.0s;
+    }
+
+    .loading span:nth-child(5) {
+        bottom: 0;
+        left: 50%;
+        margin-left: -8px;
+        -webkit-animation-delay: 1.2s;
+        -o-animation-delay: 1.2s;
+        animation-delay: 1.2s;
+    }
+
+    .loading span:nth-child(6) {
+        left: 12px;
+        bottom:12px;
+        -webkit-animation-delay: 1.4s;
+        -o-animation-delay: 1.4s;
+        animation-delay: 1.4s;
+    }
+
+    .loading span:nth-child(7) {
+        left: 0;
+        top: 50%;
+        margin-top: -8px;
+        -webkit-animation-delay: 1.6s;
+        -o-animation-delay: 1.6s;
+        animation-delay: 1.6s;
+    }
+
+    .loading span:nth-child(8) {
+        left:12px;
+        top: 12px;
+        -webkit-animation-delay: 1.8s;
+        -o-animation-delay: 1.8s;
+        animation-delay: 1.8s;
+    }
+    @keyframes load{
+      0%{
+        opacity: 1;
+        transform: scale(1.2);
+      }
+      100%{
+        opacity: 0.3;
+        transform: scale(0.3);
+      }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+
+</html>

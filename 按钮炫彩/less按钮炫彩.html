@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet/less" href="less/button.less">
+  <script src="less/less.min.js"></script>
+</head>
+<body>
+  <button class="button"><span>这个按钮</span></button>
+  <script>
+  // 在服务器上运行哦
+      document.querySelector('.button').onmousemove = (e) => {
+
+          const x = e.pageX - e.target.offsetLeft
+          const y = e.pageY - e.target.offsetTop
+
+          e.target.style.setProperty('--x', `${ x }px`)
+          e.target.style.setProperty('--y', `${ y }px`)
+      }
+  </script>
+</body>
+</html>
